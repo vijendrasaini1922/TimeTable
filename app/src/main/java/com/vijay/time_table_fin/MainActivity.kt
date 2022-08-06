@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding :ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
+//      setContentView(R.layout.display_time_table)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 

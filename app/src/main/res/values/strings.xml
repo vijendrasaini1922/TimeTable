@@ -5,6 +5,8 @@
     <string name="wed">Wed</string>
     <string name="thur">Thur</string>
     <string name="fri">Fri</string>
+    <string name="empty_class">-</string>
+    <string name="edit">Edit</string>
     <string name="l">L</string>
     <string name="u">U</string>
     <string name="n">N</string>
@@ -19,8 +21,6 @@
     <string name="_03_00_03_50">03:00 - 03:50</string>
     <string name="_04_00_04_50">04:00 - 04:50</string>
     <string name="_05_00_05_50">05:00 - 05:50</string>
-    <string name="empty_class">-</string>
-    <string name="edit">E D I T</string>
     <string name="log_in">Log In</string>
 
     <string name="selected_item">select_example</string>
