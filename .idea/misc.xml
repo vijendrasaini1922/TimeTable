@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
+        <entry key="app/src/main/res/layout-land/display_time_table.xml" value="0.21458333333333332" />
+        <entry key="app/src/main/res/layout/display_time_table.xml" value="0.29375" />
       </map>
     </option>
   </component>
