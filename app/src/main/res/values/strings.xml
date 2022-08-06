@@ -30,5 +30,17 @@
         <item>Mechanical Engineering (ME)</item>
         <item>Electrical Engineering (EE)</item>
         <item>Civil Engineering (CE)</item>
+        <item>Chemical Engineering (ChE)</item>
+    </string-array>
+
+    <string-array name="sems">
+        <item>Sem I </item>
+        <item>Sem II </item>
+        <item>Sem III </item>
+        <item>Sem IV </item>
+        <item>Sem V </item>
+        <item>Sem VI </item>
+        <item>Sem VII </item>
+        <item>Sem VIII </item>
     </string-array>
 </resources>

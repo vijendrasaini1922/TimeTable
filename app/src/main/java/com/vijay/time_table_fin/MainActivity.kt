@@ -19,9 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         val branches = resources.getStringArray(R.array.branch)
         val spinner_branch  = binding.spinnerBranch
-
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, branches)
-        spinner_branch.adapter = adapter
+        val adapter_branch = ArrayAdapter(this, android.R.layout.simple_spinner_item, branches)
+        spinner_branch.adapter = adapter_branch
 
         spinner_branch.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
@@ -39,5 +38,30 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+        val sems = resources.getStringArray(R.array.sems)
+        val spinner_sem = binding.spinnerSem
+        val adapter_sem = ArrayAdapter(this, android.R.layout.simple_spinner_item, sems)
+        spinner_sem.adapter = adapter_sem
+
+        spinner_sem.onItemSelectedListener = object:AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(this@MainActivity,
+                    getString(R.string.selected_item) + " " +
+                            "" + sems[position], Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
+
+
     }
 }
