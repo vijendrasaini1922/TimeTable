@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
-        <entry key="app/src/main/res/layout-land/display_time_table.xml" value="0.21458333333333332" />
-        <entry key="app/src/main/res/layout/display_time_table.xml" value="0.29375" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout-land/activity_display_time_table.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout-land/display_time_table.xml" value="0.1" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout-land/test2.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/activity_display_time_table.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/display_time_table.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/test.xml" value="0.2734375" />
       </map>
     </option>
   </component>

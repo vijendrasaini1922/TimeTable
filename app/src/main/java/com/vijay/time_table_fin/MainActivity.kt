@@ -1,5 +1,7 @@
 package com.vijay.time_table_fin
 
+import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -57,11 +59,18 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
+
             }
 
         }
 
+        val login_button = binding.loginBtn
+        val intent = Intent(this, DisplayTimeTableActivity::class.java)
+        login_button.setOnClickListener(){
+            startActivity(intent)
+
+
+        }
 
     }
 }
