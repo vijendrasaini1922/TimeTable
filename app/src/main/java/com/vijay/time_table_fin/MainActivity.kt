@@ -15,7 +15,8 @@ class MainActivity: AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setSpinner(resources.getStringArray(R.array.branch), binding.spinnerBranch) // Branch
-        setSpinner(resources.getStringArray(R.array.sems), binding.spinnerSem)      // Sem
+        setSpinner(resources.getStringArray(R.array.sems), binding.spinnerSem)      // Semester
+        setSpinner(resources.getStringArray(R.array.div), binding.spinnerDiv)       // Division
         logIn()
     }
 
