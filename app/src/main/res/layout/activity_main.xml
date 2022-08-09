@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <Spinner
         android:id="@+id/spinner_branch"
         android:layout_width="match_parent"
@@ -43,7 +42,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
