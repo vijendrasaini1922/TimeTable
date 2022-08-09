@@ -10,4 +10,5 @@
     <color name="time_line_odd">#FFCCCCCC</color>
     <color name="time_line_even">#FFDDDDDD</color>
     <color name="lunch">#FFFFFFFF</color>
+    <color name="top_layer">#DD000000</color>
 </resources>
