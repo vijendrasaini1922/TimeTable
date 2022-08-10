@@ -23,7 +23,6 @@
     <string name="_05_00_05_50">05:00 - 05:50</string>
     <string name="log_in">Log In</string>
 
-    <string name="selected_item">select_example</string>
     <string-array name="branch">
         <item>Computer Science And Engineering (CSE)</item>
         <item>Electronics And Communication Engineering (ECE)</item>
@@ -48,5 +47,11 @@
         <item>Div A</item>
         <item>Div B</item>
         <item>Div C</item>
+    </string-array>
+
+    <string-array name="CSE">
+        <item>OS</item>
+        <item>CN</item>
+        <item>PEEBM</item>
     </string-array>
 </resources>
