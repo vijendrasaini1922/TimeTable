@@ -1,6 +1,8 @@
 package com.vijay.time_table_fin
 
+import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -12,6 +14,7 @@ class MainActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setSpinner(resources.getStringArray(R.array.branch), binding.spinnerBranch) // Branch

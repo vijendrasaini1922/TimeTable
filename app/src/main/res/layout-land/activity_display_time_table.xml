@@ -14,6 +14,7 @@
         android:gravity="center"
         android:textAlignment="center"
         android:weightSum="60"
+        android:stretchColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +22,7 @@
 
         <TableRow
             android:id="@+id/row1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:background="@color/purple_200"
@@ -29,11 +30,12 @@
 
             <TextView
                 android:id="@+id/one1"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
                 android:gravity="center"
+                android:onClick="edit"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/edit"
@@ -41,7 +43,7 @@
 
             <TextView
                 android:id="@+id/one2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -53,7 +55,7 @@
 
             <TextView
                 android:id="@+id/one3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
@@ -65,7 +67,7 @@
 
             <TextView
                 android:id="@+id/one4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -77,7 +79,7 @@
 
             <TextView
                 android:id="@+id/one5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
@@ -89,7 +91,7 @@
 
             <TextView
                 android:id="@+id/one6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -101,7 +103,7 @@
 
             <TextView
                 android:id="@+id/one7"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
@@ -113,7 +115,7 @@
 
             <TextView
                 android:id="@+id/one8"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -125,7 +127,7 @@
 
             <TextView
                 android:id="@+id/one9"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
@@ -137,7 +139,7 @@
 
             <TextView
                 android:id="@+id/one10"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -150,14 +152,14 @@
 
         <TableRow
             android:id="@+id/row2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/two1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -169,10 +171,11 @@
 
             <TextView
                 android:id="@+id/two2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -180,10 +183,11 @@
 
             <TextView
                 android:id="@+id/two3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -191,10 +195,11 @@
 
             <TextView
                 android:id="@+id/two4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -202,10 +207,11 @@
 
             <TextView
                 android:id="@+id/two5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -213,7 +219,7 @@
 
             <TextView
                 android:id="@+id/two6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/lunch"
@@ -225,10 +231,11 @@
 
             <TextView
                 android:id="@+id/two7"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -236,10 +243,11 @@
 
             <TextView
                 android:id="@+id/two8"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -247,10 +255,11 @@
 
             <TextView
                 android:id="@+id/two9"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -258,10 +267,11 @@
 
             <TextView
                 android:id="@+id/two10"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -270,14 +280,14 @@
 
         <TableRow
             android:id="@+id/row3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/three1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
@@ -289,10 +299,11 @@
 
             <TextView
                 android:id="@+id/three2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -300,10 +311,11 @@
 
             <TextView
                 android:id="@+id/three3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -311,10 +323,11 @@
 
             <TextView
                 android:id="@+id/three4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -322,10 +335,11 @@
 
             <TextView
                 android:id="@+id/three5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -333,7 +347,7 @@
 
             <TextView
                 android:id="@+id/three6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/lunch"
@@ -345,10 +359,11 @@
 
             <TextView
                 android:id="@+id/three7"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -356,10 +371,11 @@
 
             <TextView
                 android:id="@+id/three8"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -367,10 +383,11 @@
 
             <TextView
                 android:id="@+id/three9"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -378,10 +395,11 @@
 
             <TextView
                 android:id="@+id/three10"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -390,14 +408,14 @@
 
         <TableRow
             android:id="@+id/row4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/four1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -409,10 +427,11 @@
 
             <TextView
                 android:id="@+id/four2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -420,10 +439,11 @@
 
             <TextView
                 android:id="@+id/four3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -431,10 +451,11 @@
 
             <TextView
                 android:id="@+id/four4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -442,10 +463,11 @@
 
             <TextView
                 android:id="@+id/four5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -453,7 +475,7 @@
 
             <TextView
                 android:id="@+id/four6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/lunch"
@@ -465,10 +487,11 @@
 
             <TextView
                 android:id="@+id/four7"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -476,10 +499,11 @@
 
             <TextView
                 android:id="@+id/four8"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -487,10 +511,11 @@
 
             <TextView
                 android:id="@+id/four9"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -498,10 +523,11 @@
 
             <TextView
                 android:id="@+id/four10"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -510,14 +536,14 @@
 
         <TableRow
             android:id="@+id/row5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/five1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_odd"
@@ -529,10 +555,11 @@
 
             <TextView
                 android:id="@+id/five2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -540,10 +567,11 @@
 
             <TextView
                 android:id="@+id/five3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -551,10 +579,11 @@
 
             <TextView
                 android:id="@+id/five4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -562,10 +591,11 @@
 
             <TextView
                 android:id="@+id/five5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -573,7 +603,7 @@
 
             <TextView
                 android:id="@+id/five6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/lunch"
@@ -585,10 +615,11 @@
 
             <TextView
                 android:id="@+id/five7"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -596,10 +627,11 @@
 
             <TextView
                 android:id="@+id/five8"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -607,10 +639,11 @@
 
             <TextView
                 android:id="@+id/five9"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -618,10 +651,11 @@
 
             <TextView
                 android:id="@+id/five10"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -630,14 +664,14 @@
 
         <TableRow
             android:id="@+id/row6"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/six1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/time_line_even"
@@ -649,10 +683,11 @@
 
             <TextView
                 android:id="@+id/six2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -660,10 +695,11 @@
 
             <TextView
                 android:id="@+id/six3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -671,10 +707,11 @@
 
             <TextView
                 android:id="@+id/six4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -682,10 +719,11 @@
 
             <TextView
                 android:id="@+id/six5"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -693,7 +731,7 @@
 
             <TextView
                 android:id="@+id/six6"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/lunch"
@@ -705,10 +743,11 @@
 
             <TextView
                 android:id="@+id/six7"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -716,10 +755,11 @@
 
             <TextView
                 android:id="@+id/six8"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -727,10 +767,11 @@
 
             <TextView
                 android:id="@+id/six9"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
@@ -738,10 +779,11 @@
 
             <TextView
                 android:id="@+id/six10"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="setSubject"
                 android:paddingLeft="@dimen/cell_padding"
                 android:paddingRight="@dimen/cell_padding"
                 android:text="@string/empty_class"
