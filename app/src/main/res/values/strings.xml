@@ -34,13 +34,19 @@
     </string-array>
 
     <string-array name="sems">
-        <item>Sem I </item>
-        <item>Sem II </item>
-        <item>Sem III </item>
-        <item>Sem IV </item>
-        <item>Sem V </item>
-        <item>Sem VI </item>
-        <item>Sem VII </item>
-        <item>Sem VIII </item>
+        <item>Sem I</item>
+        <item>Sem II</item>
+        <item>Sem III</item>
+        <item>Sem IV</item>
+        <item>Sem V</item>
+        <item>Sem VI</item>
+        <item>Sem VII</item>
+        <item>Sem VIII</item>
+    </string-array>
+
+    <string-array name="div">
+        <item>Div A</item>
+        <item>Div B</item>
+        <item>Div C</item>
     </string-array>
 </resources>
