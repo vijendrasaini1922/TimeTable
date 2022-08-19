@@ -5,10 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 
 class DisplayTimeTableActivity: AppCompatActivity() {
-    var edit_lock: Boolean = true
-    var subjects = ArrayList<String>()
+    var subjects = arrayOf(
+        "OS", "PPA", "CN",
+        "ML", "PEEBM", "Branch Specific"
+    )
+
+    private var edit_lock: Boolean = true
+    private lateinit var listView: ListView
+    private lateinit var adapter : ArrayAdapter<String>
+    private lateinit var alertDialog: AlertDialog.Builder
+    private lateinit var dialog:AlertDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +29,7 @@ class DisplayTimeTableActivity: AppCompatActivity() {
         supportActionBar?.hide()
 
         setContentView(R.layout.activity_display_time_table)
+
         edit_lock = true
     }
 
@@ -39,9 +50,28 @@ class DisplayTimeTableActivity: AppCompatActivity() {
             Toast.makeText(this, "Edit Menu Locked", Toast.LENGTH_SHORT).show()
             return
         }
-        Toast.makeText(this, "Select Subject", Toast.LENGTH_SHORT).show()
+        openDialog(view)
+
+        //Toast.makeText(this, "Select Subject", Toast.LENGTH_SHORT).show()
 
         // TODO select subject in a spinner
         // TODO create new subject by taking input from user
+    }
+
+    fun openDialog(view: View) {
+        alertDialog = AlertDialog.Builder(this)
+        val rowList: View = layoutInflater.inflate(R.layout.row, null)
+        listView = rowList.findViewById(R.id.list)
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, subjects)
+        listView.adapter = adapter
+        adapter.notifyDataSetChanged()
+        alertDialog.setView(rowList)
+        dialog = alertDialog.create()
+        dialog.show()
+    }
+
+    fun closeDialog(view: View) {
+        dialog.dismiss()
+        Toast.makeText(baseContext, "Dialog Closed", Toast.LENGTH_SHORT).show()
     }
 }
