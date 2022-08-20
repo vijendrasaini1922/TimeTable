@@ -36,36 +36,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9" />
 
-        <Spinner
-            android:id="@+id/spinner_branch"
-            android:layout_width="@dimen/spinner_width"
-            android:layout_height="@dimen/spinner_height"
-            android:layout_marginBottom="@dimen/spinner_vertical_gap"
-            android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toTopOf="@+id/spinner_sem"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left" />
-
-        <Spinner
-            android:id="@+id/spinner_sem"
-            android:layout_width="@dimen/spinner_width"
-            android:layout_height="@dimen/spinner_height"
-            android:layout_marginBottom="@dimen/spinner_vertical_gap"
-            android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toTopOf="@+id/spinner_div"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left" />
-
-        <Spinner
-            android:id="@+id/spinner_div"
-            android:layout_width="@dimen/spinner_width"
-            android:layout_height="@dimen/spinner_height"
-            android:layout_marginBottom="@dimen/login_btn_gap"
-            android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toTopOf="@+id/login_btn"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left" />
-
         <Button
             android:id="@+id/login_btn"
             android:layout_width="wrap_content"
@@ -75,6 +45,54 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left" />
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="@dimen/spinner_height"
+            android:layout_marginBottom="@dimen/spinner_vertical_gap"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/passwordLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="@dimen/spinner_height"
+            android:layout_marginBottom="@dimen/login_btn_gap"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/login_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/usernameLabel"
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="@dimen/spinner_height"
+            android:text="@string/username"
+            android:gravity="bottom"
+            android:textSize="@dimen/text_size"
+            android:paddingLeft="@dimen/cell_padding"
+            app:layout_constraintBottom_toTopOf="@+id/userName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/passwordLabel"
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="@dimen/spinner_height"
+            android:gravity="bottom"
+            android:text="@string/password"
+            android:textSize="@dimen/text_size"
+            android:paddingLeft="@dimen/cell_padding"
+            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
