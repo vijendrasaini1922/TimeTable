@@ -54,4 +54,15 @@
         <item>CN</item>
         <item>PEEBM</item>
     </string-array>
+
+    <!-- String For Choose Subject From Alert Box-->
+    <string name="select_subject">Select Subject</string>
+    <string-array name="subjects">
+        <item>ML</item>
+        <item>OS</item>
+        <item>CN</item>
+        <item>PEEBM</item>
+        <item>SEMINAR</item>
+        <item>PPA</item>
+    </string-array>
 </resources>
