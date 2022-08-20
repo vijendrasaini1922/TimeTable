@@ -14,6 +14,8 @@
         <entry key="app/src/main/res/layout-land/time_table.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_display_time_table.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.29583333333333334" />
+        <entry key="app/src/main/res/layout/sign_up_activity.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/time_table.xml" value="0.30885416666666665" />
       </map>
     </option>

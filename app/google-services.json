@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055474947742",
+    "project_id": "time-table-fin",
+    "storage_bucket": "time-table-fin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055474947742:android:070baff74ef2d836534d8f",
+        "android_client_info": {
+          "package_name": "com.vijay.time_table_fin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055474947742-e4niqqvat60710havc1ue9gvnj5qsk8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABGBd_oaLEhOCVxpSK_YqdZS5Axxq1eyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055474947742-e4niqqvat60710havc1ue9gvnj5qsk8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
