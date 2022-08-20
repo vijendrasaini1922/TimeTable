@@ -16,7 +16,9 @@
         android:theme="@style/Theme.TimeTablefin"
         tools:targetApi="31">
         <activity
-            android:name=".SignUpActivity"
+            android:name=".SignUpActivity" />
+        <activity
+            android:name=".SubjectSelectActivity"
             android:exported="false" />
         <activity
             android:name=".DisplayTimeTableActivity"
