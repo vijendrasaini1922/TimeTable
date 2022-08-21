@@ -77,7 +77,6 @@
             android:text="@string/username"
             android:gravity="bottom"
             android:textSize="@dimen/text_size"
-            android:paddingLeft="@dimen/cell_padding"
             app:layout_constraintBottom_toTopOf="@+id/userName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -89,8 +88,30 @@
             android:gravity="bottom"
             android:text="@string/password"
             android:textSize="@dimen/text_size"
-            android:paddingLeft="@dimen/cell_padding"
             app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/signUp_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/log_sign_btn_gap"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_bottom" />
+
+        <TextView
+            android:id="@+id/orLabel"
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="@dimen/spinner_height"
+            android:text="@string/or"
+            android:gravity="center"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintTop_toBottomOf="@+id/login_btn"
+            app:layout_constraintBottom_toTopOf="@+id/signUp_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

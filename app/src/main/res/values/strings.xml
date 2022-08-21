@@ -28,6 +28,7 @@
     <string name="branch">BRANCH</string>
     <string name="semester">SEMESTER</string>
     <string name="division">DIVISION</string>
+    <string name="or">-- or --</string>
 
     <string-array name="branch">
         <item>Computer Science And Engineering (CSE)</item>

@@ -24,12 +24,20 @@ class MainActivity: AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         logIn()
+        signUp()
+    }
+
+    fun signUp() {
+        val signUp_button = binding.signUpBtn
+        signUp_button.setOnClickListener() {
+            val signUpIntent = Intent(this, SignUpActivity::class.java)
+            startActivity(signUpIntent)
+        }
     }
 
     fun logIn() {
         val login_button = binding.loginBtn
         val timeTableIntent = Intent(this, DisplayTimeTableActivity::class.java)
-        val signUpIntent = Intent(this, SignUpActivity::class.java)
         login_button.setOnClickListener() { view->
             val username: String? = binding.userName.text.toString()
             val password: String? = binding.password.text.toString()
@@ -42,13 +50,12 @@ class MainActivity: AppCompatActivity() {
                 }
             } else {
                 Toast.makeText(this, "$username doesn't exist", Toast.LENGTH_SHORT).show()
-                startActivity(signUpIntent)
             }
         }
     }
 
     fun validUsername(username: String?) : Boolean {
-        if (username == null || username.trim() == null || username.trim().length == 0) {
+        if (username == null || username.trim().length == 0) {
             return false
         }
         return false

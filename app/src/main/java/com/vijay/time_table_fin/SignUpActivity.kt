@@ -37,22 +37,50 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun signUp() {
-        val login_button = binding.signUpBtn
+        val signUp_btn = binding.signUpBtn
         val intent = Intent(this, MainActivity::class.java)
-        login_button.setOnClickListener() {
+        signUp_btn.setOnClickListener() {
             addNewUser()
-            Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show()
             //startActivity(intent)
         }
     }
 
+    private fun validUsername(username: String?) : Boolean {
+        val size = 3
+        if (username == null || username.trim().length < size) {
+            return false
+        }
+        return true
+    }
+
+    private fun validPassword(password: String?) : Boolean {
+        val size = 3
+        if (password == null || password.trim().length < size) {
+            return false
+        }
+        return true
+    }
+
     private fun addNewUser() {
+        val username: String? = binding.userName.text.toString()
+        val password: String? = binding.password.text.toString()
+        if (!validUsername(username)) {
+            Toast.makeText(this, "Username should be atleast of size 3", Toast.LENGTH_LONG).show()
+            return
+        }
+        if (!validPassword(password)) {
+            Toast.makeText(this, "Password should be of size 8 or greater", Toast.LENGTH_LONG).show()
+            return
+        }
+
         viewModel.addNewUser(
-            binding.userName.text.toString(),
-            binding.password.text.toString(),
+            username!!,
+            password!!,
             binding.spinnerBranch.selectedItem.toString(),
             binding.spinnerSem.selectedItem.toString(),
             binding.spinnerDiv.selectedItem.toString()
         )
+
+        Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show()
     }
 }

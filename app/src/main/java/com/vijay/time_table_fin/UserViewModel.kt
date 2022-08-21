@@ -12,7 +12,7 @@ class UserViewModel(private val userDao: UserDao) : ViewModel() {
         }
     }
 
-    private fun getNewUserEntry(username: String, password: String?, branch: String?, sem: String?, div: String?) : User {
+    private fun getNewUserEntry(username: String, password: String, branch: String, sem: String, div: String) : User {
         return User(
             username = username,
             password = password,
@@ -22,12 +22,12 @@ class UserViewModel(private val userDao: UserDao) : ViewModel() {
         )
     }
 
-    fun addNewUser(username: String, password: String?, branch: String?, sem: String?, div: String?) {
+    fun addNewUser(username: String, password: String, branch: String, sem: String, div: String) {
         val newUser = getNewUserEntry(username, password, branch, sem, div)
         addUser(newUser)
     }
 
-    fun getUser(username: String) : User {
+    fun getUser(username: String) : User? {
         return userDao.getUser(username)
     }
 }
