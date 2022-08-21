@@ -23,8 +23,12 @@
     <string name="_05_00_05_50">05:00 - 05:50</string>
     <string name="log_in">Log In</string>
     <string name="sign_up">Sign Up</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="branch">BRANCH</string>
+    <string name="semester">SEMESTER</string>
+    <string name="division">DIVISION</string>
+    <string name="or">-- or --</string>
 
     <string-array name="branch">
         <item>Computer Science And Engineering (CSE)</item>

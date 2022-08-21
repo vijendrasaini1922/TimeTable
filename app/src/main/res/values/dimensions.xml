@@ -4,8 +4,9 @@
     <dimen name="text_size">14sp</dimen>
     <dimen name="guideline_begin">0.1</dimen>
     <dimen name="guideline_end">0.9</dimen>
-    <dimen name="spinner_vertical_gap">33dp</dimen>
-    <dimen name="login_btn_gap">69dp</dimen>
+    <dimen name="spinner_vertical_gap">48dp</dimen>
+    <dimen name="login_btn_gap">48dp</dimen>
     <dimen name="spinner_width">250dp</dimen>
     <dimen name="spinner_height">48dp</dimen>
+    <dimen name="log_sign_btn_gap">48dp</dimen>
 </resources>

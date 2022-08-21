@@ -10,11 +10,11 @@ data class User (
     @ColumnInfo(name = "username")
     var username: String = "",
     @ColumnInfo(name = "password")
-    var password: String? = "",
+    var password: String = "",
     @ColumnInfo(name = "branch")
-    var branch: String? = "",
+    var branch: String = "",
     @ColumnInfo(name = "sem")
-    var sem: String? = "",
+    var sem: String = "",
     @ColumnInfo(name = "div")
-    var div: String? = ""
+    var div: String = ""
 )
