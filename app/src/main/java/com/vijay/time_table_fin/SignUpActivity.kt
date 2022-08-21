@@ -14,8 +14,8 @@ import com.vijay.time_table_fin.databinding.ActivitySignUpBinding
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
     private val viewModel: UserViewModel by viewModels {
-        UserViewModeFactory(
-            (this?.application as UserApplication).database.userDao()
+        UserViewModelFactory(
+            (application as UserApplication).database.userDao()
         )
     }
 
@@ -28,7 +28,6 @@ class SignUpActivity : AppCompatActivity() {
         setSpinner(resources.getStringArray(R.array.branch), binding.spinnerBranch) // Branch
         setSpinner(resources.getStringArray(R.array.sems), binding.spinnerSem)      // Semester
         setSpinner(resources.getStringArray(R.array.div), binding.spinnerDiv)       // Division
-
         signUp()
     }
 
@@ -43,7 +42,7 @@ class SignUpActivity : AppCompatActivity() {
         login_button.setOnClickListener() {
             addNewUser()
             Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
+            //startActivity(intent)
         }
     }
 
@@ -53,7 +52,7 @@ class SignUpActivity : AppCompatActivity() {
             binding.password.text.toString(),
             binding.spinnerBranch.selectedItem.toString(),
             binding.spinnerSem.selectedItem.toString(),
-            binding.spinnerDiv.selectedItem.toString(),
+            binding.spinnerDiv.selectedItem.toString()
         )
     }
 }

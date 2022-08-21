@@ -4,18 +4,16 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import com.vijay.time_table_fin.databinding.ActivityMainBinding
 
 class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var user: User
     private val viewModel: UserViewModel by viewModels {
-        UserViewModeFactory(
+        UserViewModelFactory(
             (application as UserApplication).database.userDao()
         )
     }
