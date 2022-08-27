@@ -68,7 +68,7 @@ class MainActivity: AppCompatActivity() {
 
     private fun validEmail(email: String?) : Boolean {
         val size = 3
-        if (email == null || email.trim().length < size || !email.contains("@gmail.com") || !email.contains("@coed.svnit.ac.in")) {
+        if (email == null || email.trim().length < size || !email.contains("@")) {
             return false
         }
         return true

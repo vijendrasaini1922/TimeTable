@@ -42,14 +42,13 @@ class SignUpActivity : AppCompatActivity() {
             var added = addNewUser()
             if (added) {
                 startActivity(intent)
-                Log.d("SignUpActivity", "User Added")
             }
         }
     }
 
     private fun validEmail(email: String?) : Boolean {
-        val size = 3
-        if (email == null || email.trim().length < size || !email.contains("@gmail.com") || !email.contains("@coed.svnit.ac.in")) {
+        val size = 10
+        if (email == null || email.trim().length < size || !email.contains("@")) {
             return false
         }
         return true
@@ -82,7 +81,6 @@ class SignUpActivity : AppCompatActivity() {
         createUser(email!!, password!!)
         userViewModel.addNewUser(
             email!!,
-            password!!,
             binding.spinnerBranch.selectedItem.toString(),
             binding.spinnerSem.selectedItem.toString(),
             binding.spinnerDiv.selectedItem.toString()

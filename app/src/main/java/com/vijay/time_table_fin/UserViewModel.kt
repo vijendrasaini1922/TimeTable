@@ -22,18 +22,17 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    private fun getNewUserEntry(email: String, password: String, branch: String, sem: String, div: String) : User {
+    private fun getNewUserEntry(email: String, branch: String, sem: String, div: String) : User {
         return User(
             email = email,
-            password = password,
             branch = branch,
             sem = sem,
             div = div
         )
     }
 
-    fun addNewUser(email: String, password: String, branch: String, sem: String, div: String) {
-        val newUser = getNewUserEntry(email, password, branch, sem, div)
+    fun addNewUser(email: String, branch: String, sem: String, div: String) {
+        val newUser = getNewUserEntry(email, branch, sem, div)
         addUser(newUser)
     }
 
