@@ -7,12 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.vijay.time_table_fin.databinding.ActivitySignUpBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
@@ -29,6 +26,7 @@ class SignUpActivity : AppCompatActivity() {
         setSpinner(resources.getStringArray(R.array.div), binding.spinnerDiv)       // Division
         userViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
             .getInstance(application)).get(UserViewModel::class.java)
+
         signUp()
     }
 
@@ -41,50 +39,55 @@ class SignUpActivity : AppCompatActivity() {
         val signUp_btn = binding.signUpBtn
         val intent = Intent(this, MainActivity::class.java)
         signUp_btn.setOnClickListener() {
-            Log.d("SignUpActivity", "Entering logIn...")
-            GlobalScope.launch {
-                addNewUser()
+            var added = addNewUser()
+            if (added) {
                 startActivity(intent)
                 Log.d("SignUpActivity", "User Added")
             }
         }
     }
 
-    private fun validUsername(username: String?) : Boolean {
+    private fun validEmail(email: String?) : Boolean {
         val size = 3
-        if (username == null || username.trim().length < size) {
-            Log.d("SignUpActivity", "Username should be of size $size or greater")
+        if (email == null || email.trim().length < size || !email.contains("@gmail.com") || !email.contains("@coed.svnit.ac.in")) {
             return false
         }
-        Log.d("SignUpActivity", "Username is valid")
         return true
     }
 
     private fun validPassword(password: String?) : Boolean {
         val size = 3
         if (password == null || password.trim().length < size) {
-            Log.d("SignUpActivity", "Password should be atleast of size $size")
             return false
         }
-        Log.d("SignUpActivity", "Password is valid")
         return true
     }
 
-    private fun addNewUser() {
-        val username: String? = binding.userName.text.toString()
+    private fun createUser(email: String, password: String) {
+        userViewModel.auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+
+                }
+            }
+    }
+
+    private fun addNewUser() : Boolean {
+        val email: String? = binding.email.text.toString()
         val password: String? = binding.password.text.toString()
-        if (!validUsername(username) || !validPassword(password)) {
-            return
+        if (!validEmail(email) || !validPassword(password)) {
+            return false
         }
 
+        createUser(email!!, password!!)
         userViewModel.addNewUser(
-            username!!,
+            email!!,
             password!!,
             binding.spinnerBranch.selectedItem.toString(),
             binding.spinnerSem.selectedItem.toString(),
             binding.spinnerDiv.selectedItem.toString()
         )
 
-        Log.d("SignUpActivity", "User Added")
+        return true
     }
 }

@@ -67,8 +67,8 @@
 
     <Button
         android:id="@+id/signUp_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
         android:gravity="center"
         android:text="@string/sign_up"
         app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
@@ -76,7 +76,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/email"
         android:layout_width="@dimen/spinner_width"
         android:layout_height="@dimen/spinner_height"
         android:ems="10"
@@ -98,13 +98,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/usernameLabel"
+        android:id="@+id/emailLabel"
         android:layout_width="@dimen/spinner_width"
         android:layout_height="@dimen/spinner_height"
-        android:text="@string/username"
+        android:text="@string/email"
         android:gravity="bottom"
         android:textSize="@dimen/text_size"
-        app:layout_constraintBottom_toTopOf="@+id/userName"
+        app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -38,8 +38,8 @@
 
         <Button
             android:id="@+id/login_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
             android:gravity="center"
             android:text="@string/log_in"
             app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
@@ -47,7 +47,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
         <EditText
-            android:id="@+id/userName"
+            android:id="@+id/email"
             android:layout_width="@dimen/spinner_width"
             android:layout_height="@dimen/spinner_height"
             android:layout_marginBottom="@dimen/spinner_vertical_gap"
@@ -71,13 +71,13 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/usernameLabel"
+            android:id="@+id/emailLabel"
             android:layout_width="@dimen/spinner_width"
             android:layout_height="@dimen/spinner_height"
-            android:text="@string/username"
+            android:text="@string/email"
             android:gravity="bottom"
             android:textSize="@dimen/text_size"
-            app:layout_constraintBottom_toTopOf="@+id/userName"
+            app:layout_constraintBottom_toTopOf="@+id/email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -94,8 +94,8 @@
 
         <Button
             android:id="@+id/signUp_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
             android:layout_marginTop="@dimen/log_sign_btn_gap"
             android:gravity="center"
             android:text="@string/sign_up"
