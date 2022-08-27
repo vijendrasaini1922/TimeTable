@@ -34,16 +34,10 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         val newUser = getNewUserEntry(username, password, branch, sem, div)
         addUser(newUser)
     }
-}
 
-//class UserViewModelFactory(private val userDao: UserDao) : ViewModelProvider.Factory {
-//    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-//        Log.d("Factory", "Might be a problem!!!!")
-//        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-//            Log.d("Factory", "No problem with the factory chief!")
-//            @Suppress("UNCHECKED_CAST")
-//            return UserViewModel(userDao) as T
-//        }
-//        throw IllegalArgumentException("Unknown ViewModel class")
-//    }
-//}
+    fun updateUser(user: User) {
+        viewModelScope.launch {
+            userRepository.updateUser(user)
+        }
+    }
+}
