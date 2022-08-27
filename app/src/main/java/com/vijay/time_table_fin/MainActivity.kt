@@ -1,18 +1,12 @@
 package com.vijay.time_table_fin
 
-import android.app.Application
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.*
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.vijay.time_table_fin.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
 
 class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
