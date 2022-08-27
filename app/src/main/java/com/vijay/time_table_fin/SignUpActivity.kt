@@ -43,6 +43,8 @@ class SignUpActivity : AppCompatActivity() {
             var added = addNewUser()
             if (added) {
                 startActivity(intent)
+            } else {
+                Toast.makeText(this, "Not added", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -65,13 +67,16 @@ class SignUpActivity : AppCompatActivity() {
         return true
     }
 
-    private fun createUser(email: String, password: String) {
+    private fun createUser(email: String, password: String) : Boolean {
+        var created = false
         userViewModel.auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-
+                    created = true
                 }
             }
+
+        return created
     }
 
     private fun addNewUser() : Boolean {
@@ -81,14 +86,18 @@ class SignUpActivity : AppCompatActivity() {
             return false
         }
 
-        createUser(email!!, password!!)
-        userViewModel.addNewUser(
-            email!!,
-            binding.spinnerBranch.selectedItem.toString(),
-            binding.spinnerSem.selectedItem.toString(),
-            binding.spinnerDiv.selectedItem.toString()
-        )
+        val created = createUser(email!!, password!!)
+        if (created) {
+            userViewModel.addNewUser(
+                email!!,
+                binding.spinnerBranch.selectedItem.toString(),
+                binding.spinnerSem.selectedItem.toString(),
+                binding.spinnerDiv.selectedItem.toString()
+            )
+            return true
+        }
 
-        return true
+        Toast.makeText(this, "Not created on remote", Toast.LENGTH_SHORT).show()
+        return false
     }
 }
