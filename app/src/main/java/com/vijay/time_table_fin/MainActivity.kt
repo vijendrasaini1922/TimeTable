@@ -1,9 +1,11 @@
 package com.vijay.time_table_fin
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.vijay.time_table_fin.databinding.ActivityMainBinding
@@ -20,6 +22,7 @@ class MainActivity: AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         userViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
             .getInstance(application)).get(UserViewModel::class.java)
+
         logIn()
         signUp()
     }
@@ -46,6 +49,9 @@ class MainActivity: AppCompatActivity() {
                         }
                     }
             }
+            else{
+                Toast.makeText(this, "Invalid Email or Password", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -68,7 +74,8 @@ class MainActivity: AppCompatActivity() {
 
     private fun validEmail(email: String?) : Boolean {
         val size = 3
-        if (email == null || email.trim().length < size || !email.contains("@")) {
+        if (((email == null) || (email.trim().length < size)) && (email!!.contains("@gmail.com") || email.contains("@coed.svnit.ac.in"))) {
+            Toast.makeText(this, "Include @gmail.com or @coed.svnit.ac.in", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
@@ -76,7 +83,8 @@ class MainActivity: AppCompatActivity() {
 
     private fun validPassword(password: String?) : Boolean {
         val size = 3
-        if (password == null || password.trim().length < size) {
+        if ((password == null) || (password.trim().length < size)) {
+            Toast.makeText(this, "Password cannot be null", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
