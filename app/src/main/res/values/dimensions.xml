@@ -9,4 +9,6 @@
     <dimen name="spinner_width">250dp</dimen>
     <dimen name="spinner_height">48dp</dimen>
     <dimen name="log_sign_btn_gap">48dp</dimen>
+    <dimen name="btn_width">150dp</dimen>
+    <dimen name="btn_height">48dp</dimen>
 </resources>

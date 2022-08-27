@@ -33,7 +33,6 @@ class MainActivity: AppCompatActivity() {
     private fun signUp() {
         val signUp_button = binding.signUpBtn
         signUp_button.setOnClickListener() {
-            Log.d("MainActivity", "Entering SignUp...")
             val signUpIntent = Intent(this, SignUpActivity::class.java)
             startActivity(signUpIntent)
         }
@@ -43,34 +42,29 @@ class MainActivity: AppCompatActivity() {
         val login_button = binding.loginBtn
         val timeTableIntent = Intent(this, DisplayTimeTableActivity::class.java)
         login_button.setOnClickListener() { view ->
-            Log.d("MainActivity", "Entering logIn...")
+            val email: String? = binding.email.text.toString()
             val password: String? = binding.password.text.toString()
-            getUser()
-            if (user != null) {
-                if (user!!.password == password) {
-                    startActivity(timeTableIntent)
-                } else {
-                    Toast.makeText(this, "Password is wrong!!", Toast.LENGTH_SHORT).show()
-                    Log.d("MainActivity", "Password is wrong!!")
-                }
-            } else {
-                Toast.makeText(this, "User doesn't exist!!", Toast.LENGTH_SHORT).show()
-                Log.d("MainActivity", "User doesn't exist!!")
+            if(validEmail(email) && validPassword(password)) {
+                userViewModel.auth.signInWithEmailAndPassword(email!!, password!!)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            startActivity(timeTableIntent)
+                        }
+                    }
             }
         }
     }
 
     private fun getUser() {
-        Log.d("MainActivity", "Searching for user...")
-        val username: String? = binding.userName.text.toString()
-        if (!validUsername(username)) {
+        val email: String? = binding.email.text.toString()
+        if (!validEmail(email)) {
             return
         }
 
         userViewModel.allUsers.observe(this, {
             it?.let {
                 for (x in it) {
-                    if (x.username == username) {
+                    if (x.email == email) {
                         user = x
                     }
                 }
@@ -78,11 +72,19 @@ class MainActivity: AppCompatActivity() {
         })
     }
 
-    private fun validUsername(username: String?) : Boolean {
-        if (username == null || username.trim().length == 0) {
+    private fun validEmail(email: String?) : Boolean {
+        val size = 3
+        if (email == null || email.trim().length < size || !email.contains("@gmail.com") || !email.contains("@coed.svnit.ac.in")) {
             return false
         }
-        Log.d("MainActivity", "Username is valid")
+        return true
+    }
+
+    private fun validPassword(password: String?) : Boolean {
+        val size = 3
+        if (password == null || password.trim().length < size) {
+            return false
+        }
         return true
     }
 }

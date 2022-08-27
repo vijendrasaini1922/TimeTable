@@ -1,17 +1,19 @@
 package com.vijay.time_table_fin
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application): AndroidViewModel(application) {
     val allUsers: LiveData<List<User>>
     val userRepository: UserRepository
+    val auth: FirebaseAuth
     init {
         val userDao = UserDataBase.getDataBase(application).userDao()
         userRepository = UserRepository(userDao)
         allUsers = userRepository.users
+        auth = userRepository.auth
     }
 
     private fun addUser(user: User) {
@@ -20,9 +22,9 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    private fun getNewUserEntry(username: String, password: String, branch: String, sem: String, div: String) : User {
+    private fun getNewUserEntry(email: String, password: String, branch: String, sem: String, div: String) : User {
         return User(
-            username = username,
+            email = email,
             password = password,
             branch = branch,
             sem = sem,
@@ -30,8 +32,8 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         )
     }
 
-    fun addNewUser(username: String, password: String, branch: String, sem: String, div: String) {
-        val newUser = getNewUserEntry(username, password, branch, sem, div)
+    fun addNewUser(email: String, password: String, branch: String, sem: String, div: String) {
+        val newUser = getNewUserEntry(email, password, branch, sem, div)
         addUser(newUser)
     }
 

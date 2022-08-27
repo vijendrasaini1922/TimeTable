@@ -3,12 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTable/app/src/main/res/layout-land/activity_display_time_table.xml" value="0.24908806670140698" />
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_display_time_table.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_sign_up.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_subject_select.xml" value="0.1265625" />
-        <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTable/app/src/main/res/layout/row.xml" value="0.1" />
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout-land/activity_display_time_table.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout-land/display_time_table.xml" value="0.1" />
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout-land/test2.xml" value="0.24895833333333334" />
@@ -16,13 +10,10 @@
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/display_time_table.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/viraj/AndroidStudioProjects/TimeTablefin/app/src/main/res/layout/test.xml" value="0.2734375" />
-        <entry key="app/src/main/res/layout-land/activity_display_time_table.xml" value="0.282830810546875" />
-        <entry key="app/src/main/res/layout-land/time_table.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_display_time_table.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout-land/activity_display_time_table.xml" value="0.21458333333333332" />
+        <entry key="app/src/main/res/layout/activity_display_time_table.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.29583333333333334" />
-        <entry key="app/src/main/res/layout/sign_up_activity.xml" value="0.30885416666666665" />
-        <entry key="app/src/main/res/layout/time_table.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.3098958333333333" />
       </map>
     </option>
   </component>

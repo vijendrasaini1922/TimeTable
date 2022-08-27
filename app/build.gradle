@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.room:room-common:2.3.0'
     implementation 'androidx.room:room-ktx:2.3.0'
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
+    implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.7'
     testImplementation 'junit:junit:4.13.2'
