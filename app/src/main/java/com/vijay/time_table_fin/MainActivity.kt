@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
 import com.vijay.time_table_fin.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 
@@ -22,6 +24,8 @@ class MainActivity: AppCompatActivity() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        userViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
+            .getInstance(application)).get(UserViewModel::class.java)
         logIn()
         signUp()
     }
@@ -41,28 +45,37 @@ class MainActivity: AppCompatActivity() {
         login_button.setOnClickListener() { view ->
             Log.d("MainActivity", "Entering logIn...")
             val password: String? = binding.password.text.toString()
-            GlobalScope.launch {
-                getUser()
-                if (user != null) {
-                    if (user!!.password == password) {
-                        startActivity(timeTableIntent)
-                    } else {
-                        Log.d("MainActivity", "Password is wrong!!")
-                    }
+            getUser()
+            if (user != null) {
+                if (user!!.password == password) {
+                    startActivity(timeTableIntent)
                 } else {
-                    Log.d("MainActivity", "User doesn't exist!!")
+                    Toast.makeText(this, "Password is wrong!!", Toast.LENGTH_SHORT).show()
+                    Log.d("MainActivity", "Password is wrong!!")
                 }
+            } else {
+                Toast.makeText(this, "User doesn't exist!!", Toast.LENGTH_SHORT).show()
+                Log.d("MainActivity", "User doesn't exist!!")
             }
         }
     }
 
-    suspend private fun getUser() {
+    private fun getUser() {
         Log.d("MainActivity", "Searching for user...")
         val username: String? = binding.userName.text.toString()
-        if (validUsername(username)) {
-//            user = userViewModel.getUser(username!!)
-
+        if (!validUsername(username)) {
+            return
         }
+
+        userViewModel.allUsers.observe(this, {
+            it?.let {
+                for (x in it) {
+                    if (x.username == username) {
+                        user = x
+                    }
+                }
+            }
+        })
     }
 
     private fun validUsername(username: String?) : Boolean {

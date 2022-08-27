@@ -9,17 +9,14 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.vijay.time_table_fin.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
-    private val viewModel: UserViewModel by viewModels {
-        UserViewModelFactory(
-            (application as UserApplication).database.userDao()
-        )
-    }
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +27,8 @@ class SignUpActivity : AppCompatActivity() {
         setSpinner(resources.getStringArray(R.array.branch), binding.spinnerBranch) // Branch
         setSpinner(resources.getStringArray(R.array.sems), binding.spinnerSem)      // Semester
         setSpinner(resources.getStringArray(R.array.div), binding.spinnerDiv)       // Division
+        userViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
+            .getInstance(application)).get(UserViewModel::class.java)
         signUp()
     }
 
@@ -45,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
             Log.d("SignUpActivity", "Entering logIn...")
             GlobalScope.launch {
                 addNewUser()
-                //startActivity(intent)
+                startActivity(intent)
                 Log.d("SignUpActivity", "User Added")
             }
         }
@@ -78,7 +77,7 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
-        viewModel.addNewUser(
+        userViewModel.addNewUser(
             username!!,
             password!!,
             binding.spinnerBranch.selectedItem.toString(),
