@@ -4,12 +4,14 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.vijay.time_table_fin.databinding.ActivitySignUpBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
@@ -40,36 +42,39 @@ class SignUpActivity : AppCompatActivity() {
         val signUp_btn = binding.signUpBtn
         val intent = Intent(this, MainActivity::class.java)
         signUp_btn.setOnClickListener() {
-            addNewUser()
-            //startActivity(intent)
+            Log.d("SignUpActivity", "Entering logIn...")
+            GlobalScope.launch {
+                addNewUser()
+                //startActivity(intent)
+                Log.d("SignUpActivity", "User Added")
+            }
         }
     }
 
     private fun validUsername(username: String?) : Boolean {
         val size = 3
         if (username == null || username.trim().length < size) {
+            Log.d("SignUpActivity", "Username should be of size $size or greater")
             return false
         }
+        Log.d("SignUpActivity", "Username is valid")
         return true
     }
 
     private fun validPassword(password: String?) : Boolean {
         val size = 3
         if (password == null || password.trim().length < size) {
+            Log.d("SignUpActivity", "Password should be atleast of size $size")
             return false
         }
+        Log.d("SignUpActivity", "Password is valid")
         return true
     }
 
     private fun addNewUser() {
         val username: String? = binding.userName.text.toString()
         val password: String? = binding.password.text.toString()
-        if (!validUsername(username)) {
-            Toast.makeText(this, "Username should be atleast of size 3", Toast.LENGTH_LONG).show()
-            return
-        }
-        if (!validPassword(password)) {
-            Toast.makeText(this, "Password should be of size 8 or greater", Toast.LENGTH_LONG).show()
+        if (!validUsername(username) || !validPassword(password)) {
             return
         }
 
@@ -81,6 +86,6 @@ class SignUpActivity : AppCompatActivity() {
             binding.spinnerDiv.selectedItem.toString()
         )
 
-        Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show()
+        Log.d("SignUpActivity", "User Added")
     }
 }
