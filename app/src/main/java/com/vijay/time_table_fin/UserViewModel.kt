@@ -27,7 +27,8 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
             email = email,
             branch = branch,
             sem = sem,
-            div = div
+            div = div,
+            subjects = "-,-,-,-,-,-,-,-," + "-,-,-,-,-,-,-,-," + "-,-,-,-,-,-,-,-," + "-,-,-,-,-,-,-,-," + "-,-,-,-,-,-,-,-"
         )
     }
 

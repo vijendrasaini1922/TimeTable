@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "users_table2")
+@Entity(tableName = "users_table3")
 data class User (
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "email")
@@ -14,5 +14,7 @@ data class User (
     @ColumnInfo(name = "sem")
     var sem: String = "",
     @ColumnInfo(name = "div")
-    var div: String = ""
+    var div: String = "",
+    @ColumnInfo(name = "subjects")
+    var subjects: String
 )
