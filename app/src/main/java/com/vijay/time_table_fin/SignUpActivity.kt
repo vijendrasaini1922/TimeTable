@@ -1,19 +1,24 @@
 package com.vijay.time_table_fin
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 import com.vijay.time_table_fin.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
     private lateinit var userViewModel: UserViewModel
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +31,7 @@ class SignUpActivity : AppCompatActivity() {
         setSpinner(resources.getStringArray(R.array.div), binding.spinnerDiv)       // Division
         userViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
             .getInstance(application)).get(UserViewModel::class.java)
-
+            
         signUp()
     }
 
