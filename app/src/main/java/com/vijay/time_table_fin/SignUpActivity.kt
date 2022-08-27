@@ -43,7 +43,6 @@ class SignUpActivity : AppCompatActivity() {
             var added = addNewUser()
             if (added) {
                 startActivity(intent)
-                Log.d("SignUpActivity", "User Added")
             }
         }
     }
@@ -84,8 +83,7 @@ class SignUpActivity : AppCompatActivity() {
 
         createUser(email!!, password!!)
         userViewModel.addNewUser(
-            email,
-            password,
+            email!!,
             binding.spinnerBranch.selectedItem.toString(),
             binding.spinnerSem.selectedItem.toString(),
             binding.spinnerDiv.selectedItem.toString()

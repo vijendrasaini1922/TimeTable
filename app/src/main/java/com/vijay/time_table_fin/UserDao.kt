@@ -12,6 +12,6 @@ interface UserDao {
     @Update
     suspend fun updateUser(user: User)
 
-    @Query("SELECT * FROM users_table ORDER BY username ASC")
+    @Query("SELECT * FROM users_table2 ORDER BY email ASC")
     fun getAllUsers(): LiveData<List<User>>
 }
