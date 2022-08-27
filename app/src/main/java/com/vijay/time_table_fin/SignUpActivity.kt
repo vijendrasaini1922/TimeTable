@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.vijay.time_table_fin.databinding.ActivitySignUpBinding
@@ -49,7 +50,8 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun validEmail(email: String?) : Boolean {
         val size = 3
-        if (email == null || email.trim().length < size || !email.contains("@gmail.com") || !email.contains("@coed.svnit.ac.in")) {
+        if ((email == null || email.trim().length < size) && (email!!.contains("@gmail.com") || email.contains("@coed.svnit.ac.in"))) {
+            Toast.makeText(this, "Include @gmail.com or @coed.svnit.ac.in", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
@@ -58,6 +60,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun validPassword(password: String?) : Boolean {
         val size = 3
         if (password == null || password.trim().length < size) {
+            Toast.makeText(this, "Password cannot be null", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
@@ -81,8 +84,8 @@ class SignUpActivity : AppCompatActivity() {
 
         createUser(email!!, password!!)
         userViewModel.addNewUser(
-            email!!,
-            password!!,
+            email,
+            password,
             binding.spinnerBranch.selectedItem.toString(),
             binding.spinnerSem.selectedItem.toString(),
             binding.spinnerDiv.selectedItem.toString()
